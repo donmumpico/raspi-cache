@@ -1,0 +1,21 @@
+@(logEntryForm: Form[LogEntry])(implicit flash: Flash, lang: Lang)
+@import helper._
+@import helper.twitterBootstrap._
+
+@main(Messages("logEntries.form")) {
+
+<h2>@Messages("logEntries.form")</h2>
+	
+	@helper.form(action = routes.LogEntries.save()) {
+
+	<fieldset>
+		@helper.inputText(logEntryForm("name"))
+		@helper.textarea(logEntryForm("comment"))
+	</fieldset>
+
+	<p>
+		<input type="submit" class="btn primary" value='@Messages("logEntries.new.submit")'>
+	</p>
+	
+	}
+}

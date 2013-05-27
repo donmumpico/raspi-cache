@@ -1,0 +1,13 @@
+@(logEntries: List[LogEntry])(implicit flash: Flash, lang: Lang)
+
+@main(Messages("application.name")) {
+
+	<dl class="log-entries">
+	@for(logEntry <- logEntries) {
+		<dt>@logEntry.date</dt>
+		<dd>@logEntry.name</dd>
+		<dd>@logEntry.comment</dd>
+	}
+	</dl>
+
+}
