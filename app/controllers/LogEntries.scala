@@ -45,7 +45,6 @@ object LogEntries extends Controller {
     mapping(
       "name" -> nonEmptyText,
       "comment" -> text
-    )((name, comment) => LogEntry(new java.util.Date, name, comment))
-     ((logEntry: LogEntry) => Some(logEntry.name, logEntry.comment))
+    )(LogEntry.apply)(LogEntry.unapply)
   )  
 }

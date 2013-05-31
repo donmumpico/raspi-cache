@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                       controllers.Application.index
+
 GET 	/logEntries		controllers.LogEntries.list
 POST 	/logEntries 		controllers.LogEntries.save
 GET 	/logEntries/new 	controllers.LogEntries.newLogEntry

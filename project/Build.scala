@@ -10,11 +10,14 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     // Add your project dependencies here,
     jdbc,
-    anorm
+    anorm,
+    "postgresql" % "postgresql" % "8.4-701.jdbc4",  
+    "org.squeryl" %% "squeryl" % "0.9.5-6"
   )
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
+    testOptions in Test := Nil
     // Add your own project settings here      
   )
 
