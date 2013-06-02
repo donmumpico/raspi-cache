@@ -5,8 +5,8 @@ import play.api.mvc._
 
 object Application extends Controller {
   
-  def index = Action {
-    Redirect(routes.LogEntries.list())
+  def index = Action { implicit request =>
+    Ok(views.html.cover())
   }
    
 }

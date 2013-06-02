@@ -1,13 +1,31 @@
 @(logEntries: List[LogEntry])(implicit flash: Flash, lang: Lang)
 
-@main(Messages("application.name")) {
+@main(Messages("title")) {
+    <a class="btn" href="@controllers.routes.LogEntries.newLogEntry()">
+        <i class="icon-plus"></i> @Messages("logEntries.new.command")
+    </a>
 
-	<dl class="log-entries">
-	@for(logEntry <- logEntries) {
-		<dt>@logEntry.date</dt>
-		<dd>@logEntry.name</dd>
-		<dd>@logEntry.comment</dd>
-	}
-	</dl>
+    <p>&nbsp;</p>
 
+    @if(flash.get("success").isDefined){
+	    <div class="alert alert-success">
+		    @flash.get("success")
+	    </div>
+    }
+
+    @if(flash.get("error").isDefined){
+	    <div class="alert alert-error">
+		    @flash.get("error")
+	    </div>
+    }
+
+
+    @for(logEntry <- logEntries) {
+        <table class="table table-bordered">
+            <tr><td>Datum: <em>@logEntry.date</em></td></tr>
+            <tr><td>Name: <em>@logEntry.name</em></td></tr>
+            <tr><td>Kommentar: <em>@logEntry.comment</em></td></tr>
+        </table>            
+    }
 }
+

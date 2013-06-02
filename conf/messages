@@ -1,5 +1,7 @@
 application.name = Geocaching Logbuch "raspi-cache"
 
+title = Logbuch
+
 name = Name
 comment = Kommentar
 

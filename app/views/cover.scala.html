@@ -1,0 +1,14 @@
+@main(Messages("title")) {
+    <h2>Logbuch</h2>
+    <h1>GEOCACHING.COM</h1>
+    <img class="logo" src='@routes.Assets.at("images/geocaching-logo.jpg")'>
+    <table class="table">
+        <tr><td>Cache-Name: <em></em></td></tr>
+        <tr><td>GC-Code: <em></em></td></tr>
+        <tr><td>Versteckt von: <em>donmumpico</em></td></tr>
+        <tr><td>Kontakt: <em>0162/9236342</em></td></tr>
+    </table>
+    <p class="text-right">
+        <a href="@controllers.routes.LogEntries.list()" class="btn btn-inverse">Logbuch öffnen...</a>
+    </p>
+}

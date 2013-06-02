@@ -1,43 +1,18 @@
-@(title: String)(content: Html)(implicit flash: Flash, lang: Lang)
+@(title: String)(content: Html)
 <!DOCTYPE html>
 <html>
 <head>
 	<title>@title</title>
-	<link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
-	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+	<link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.at("stylesheets/bootstrap-responsive.css")'>
+	<link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.at("stylesheets/main.css")'>
 </head>
 <body>
-	<div class="screenshot">
 
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="@routes.Application.index()">
-						@Messages("application.name")
-					</a>
-					<a class="btn" href="@controllers.routes.LogEntries.newLogEntry()">
-						<i class="icon-plus"></i> @Messages("logEntries.new.command")
-					</a>
-				</div>
-			</div>
-		</div>
-	
-		<div class="container">
-			@if(flash.get("success").isDefined){
-				<div class="alert alert-success">
-					@flash.get("success")
-				</div>
-			}
+    <div class="well text-center">
+        @content
+    </div>
 
-			@if(flash.get("error").isDefined){
-				<div class="alert alert-error">
-					@flash.get("error")
-				</div>
-			}
-
-			@content
-		</div>
-	
-	</div>	
 </body>
 </html>
