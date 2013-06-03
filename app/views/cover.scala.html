@@ -1,4 +1,5 @@
-@main(Messages("title")) {
+@main(Messages("application.name")) {
+<div class="text-center">
     <h2>Logbuch</h2>
     <h1>GEOCACHING.COM</h1>
     <img class="logo" src='@routes.Assets.at("images/geocaching-logo.jpg")'>
@@ -9,6 +10,7 @@
         <tr><td>Kontakt: <em>0162/9236342</em></td></tr>
     </table>
     <p class="text-right">
-        <a href="@controllers.routes.LogEntries.list()" class="btn btn-inverse">Logbuch öffnen...</a>
+        <a href="@controllers.routes.LogEntries.list()" class="btn btn-inverse">@Messages("cover.open.command")</a>
     </p>
+</div>
 }

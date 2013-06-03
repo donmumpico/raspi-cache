@@ -3,19 +3,34 @@
 @import helper.twitterBootstrap._
 
 @main(Messages("logEntries.form")) {
+    <h2>@Messages("logEntries.form")</h2>
 
-<h2>@Messages("logEntries.form")</h2>
+    @if(flash.get("error").isDefined){
+	    <div class="alert alert-error">
+		    @flash.get("error")
+	    </div>
+    }
 	
-	@helper.form(action = routes.LogEntries.save()) {
+	@helper.form(action = routes.LogEntries.save(), 'class -> "form-horizontal") {
 
-	<fieldset>
-		@helper.inputText(logEntryForm("name"))
-		@helper.textarea(logEntryForm("comment"))
-	</fieldset>
+    <div class="control-group">
+        <label class="control-label" for="inputName">@Messages("logEntries.form.name")</label>
+        <div class="controls">
+          <input type="text" id="inputName" name="name">
+        </div>
+    </div>
 
-	<p>
-		<input type="submit" class="btn primary" value='@Messages("logEntries.new.submit")'>
-	</p>
+    <div class="control-group">
+        @helper.textarea(logEntryForm("comment"), '_label -> Messages("logEntries.form.comment"))
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-success">@Messages("logEntries.form.submit")</button>
+            <a href="@controllers.routes.LogEntries.list()" class="btn">@Messages("logEntries.form.back")</a>
+        </div>
+    </div>
 	
 	}
 }
+

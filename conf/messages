@@ -1,13 +1,18 @@
 application.name = Geocaching Logbuch "raspi-cache"
+application.title = Logbuch
 
-title = Logbuch
+cover.open.command = Logbuch öffnen...
 
-name = Name
-comment = Kommentar
+logEntries.new.command = Neuer Logeintrag...
+logEntries.list.date = Datum:
+logEntries.list.name = Name:
+logEntries.list.comment = Kommentar:
+logEntries.new.success = Logeintrag von "{0}" erfolgreich.
 
 logEntries.form = Neuer Logbuch Eintrag
-logEntries.new.command = Neuer Logeintrag...
-logEntries.new.submit = Loggen!
-logEntries.new.success = Logeintrag von "{0}" erfolgreich.
-validation.errors = Bitte beheben Sie die gekennzeichneten Fehler im Formular.
+logEntries.form.name = Name:
+logEntries.form.comment = Kommentar:
+logEntries.form.submit = Loggen!
+logEntries.form.back = Zurück
+validation.errors = Bitte geben Sie mindestens Ihren Namen an.
 
