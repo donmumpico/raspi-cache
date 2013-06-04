@@ -1,4 +1,5 @@
 @(logEntryForm: Form[LogEntry])(implicit flash: Flash, lang: Lang)
+
 @import helper._
 @import helper.twitterBootstrap._
 
@@ -13,23 +14,16 @@
 	
 	@helper.form(action = routes.LogEntries.save(), 'class -> "form-horizontal") {
 
-    <div class="control-group">
-        <label class="control-label" for="inputName">@Messages("logEntries.form.name")</label>
-        <div class="controls">
-          <input type="text" id="inputName" name="name">
-        </div>
-    </div>
+        @helper.inputText(logEntryForm("name"), '_label -> Messages("logEntries.form.name"), '_class -> "control-group")
+        @helper.textarea(logEntryForm("comment"), '_label -> Messages("logEntries.form.comment"), '_class -> "control-group")
 
-    <div class="control-group">
-        @helper.textarea(logEntryForm("comment"), '_label -> Messages("logEntries.form.comment"))
-    </div>
 
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="btn btn-success">@Messages("logEntries.form.submit")</button>
-            <a href="@controllers.routes.LogEntries.list()" class="btn">@Messages("logEntries.form.back")</a>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">@Messages("logEntries.form.submit")</button>
+                <a href="@controllers.routes.LogEntries.list()" class="btn">@Messages("logEntries.form.back")</a>
+            </div>
         </div>
-    </div>
 	
 	}
 }

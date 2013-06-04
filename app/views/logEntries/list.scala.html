@@ -3,8 +3,8 @@
 @main(Messages("application.title")) {
 
     <p class="text-center">
-        <a href="@controllers.routes.Application.index()">
-            <i class="icon-home"></i>        
+        <a href="@controllers.routes.Application.index()" class="btn"><i class="icon-home"></i></a>
+                  
         </a>    
         <a class="btn btn-inverse" href="@controllers.routes.LogEntries.newLogEntry()">
             <i class="icon-plus icon-white"></i> @Messages("logEntries.new.command")

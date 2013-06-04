@@ -16,3 +16,6 @@ logEntries.form.submit = Loggen!
 logEntries.form.back = Zurück
 validation.errors = Bitte geben Sie mindestens Ihren Namen an.
 
+constraint.required=Pflichtfeld
+error.required=Dieses Feld ist ein Pflichtfeld
+
