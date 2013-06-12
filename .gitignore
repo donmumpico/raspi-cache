@@ -17,3 +17,4 @@ RUNNING_PID
 .metadata
 .target
 bin
+conf/development.conf
